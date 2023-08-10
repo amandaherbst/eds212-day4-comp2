@@ -2,6 +2,8 @@
 title: "EDS 212 Day 4 Comp 2"
 format: html
 editor: visual
+execute:
+  warning: FALSE
 ---
 
 ```{r}
@@ -46,4 +48,21 @@ skim(penguins)
 ```{r}
 ggpairs(penguins)
 # look at palmerpenguins website for more refined version
+```
+
+## Making more exploratory charts in ggplot2
+
+Histogram
+
+```{r}
+# changing something based on a constant, outside aes
+# changing something based on a variable, inside aes()
+ggplot(data = penguins, aes(x = flipper_length_mm)) + geom_histogram(fill = "orange", color = "purple") + theme_minimal()
+```
+
+```{r}
+# Boxplot
+ggplot(data = penguins, aes(x = species, y = bill_length_mm)) + geom_boxplot(fill = "yellow", aes(color = island)) + 
+  geom_jitter(color = "magenta", aes(size = bill_depth_mm), alpha = 0.5) +
+  theme_dark()
 ```
