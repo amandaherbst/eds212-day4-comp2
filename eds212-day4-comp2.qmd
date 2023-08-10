@@ -4,4 +4,46 @@ format: html
 editor: visual
 ---
 
-## Day 4 Computational Session 2!
+```{r}
+library(GGally)
+library(skimr)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+## Basic Data Exploration
+
+-   names: get variable names
+
+-   dim: get data dimensions
+
+-   head: get first n lines (6 by default)
+
+-   tail: get last n lines (6 by default)
+
+-   summary: get basic summary statistics
+
+Use above in console to get basic info and check your data
+
+```{r}
+names(penguins)
+
+dim(penguins)
+
+head(penguins)
+
+tail(penguins)
+
+summary(penguins)
+```
+
+```{r}
+# great for initial, rough data exploration
+# skimr::skim() tells us that the skim function is specifically from skimr package
+skim(penguins)
+```
+
+```{r}
+ggpairs(penguins)
+# look at palmerpenguins website for more refined version
+```
